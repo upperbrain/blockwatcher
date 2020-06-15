@@ -1,0 +1,32 @@
+$ sudo vim /etc/profile
+// Add
+export PATH=$PATH:/usr/local/go/bin
+$go version
+go version go1.14.3 darwin/amd64
+$ brew --version
+Homebrew 2.2.9
+Homebrew/homebrew-core (git revision 00f1f; last commit 2020-03-09)
+Homebrew/homebrew-cask (git revision 6e969; last commit 2020-03-09)
+$ brew update
+$ brew tap ethereum/ethereum
+$ brew install ethereum
+$ geth version
+Geth
+Version: 1.9.14-stable
+Architecture: amd64
+Protocol Versions: [65 64 63]
+Go Version: go1.14.2
+Operating System: darwin
+GOPATH=
+GOROOT=/usr/local/Cellar/go/1.14.2_1/libexec
+$ df -h
+Filesystem      Size   Used  Avail Capacity iused               ifree %iused  Mounted on
+/dev/disk1s1   113Gi   97Gi  6.3Gi    94% 3420356 9223372036851355451    0%   /
+devfs          189Ki  189Ki    0Bi   100%     652                   0  100%   /dev
+/dev/disk1s4   113Gi  8.0Gi  6.3Gi    56%       7 9223372036854775800    0%   /private/var/vm
+map -hosts       0Bi    0Bi    0Bi   100%       0                   0  100%   /net
+map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /home
+/dev/disk2s1   466Gi  221Gi  245Gi    48%   49935          4294917344    0%   /Volumes/SSD
+/dev/disk1s3   113Gi  982Mi  6.3Gi    14%      42 9223372036854775765    0%   /Volumes/Recovery//
+$ geth --syncmode fast --datadir /Volumes/SSD/Ethereum --rpc --rpccorsdomain=* --port 30303 --graphql --cache=2048
+$geth attach /Volumes/SSD/Ethereum/geth.ipc
